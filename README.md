@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Issue Tracker
+
+This is an Issue Tracker app built with [Next.js](https://nextjs.org) and [Prisma](https://www.prisma.io), designed to track and manage issues. The app allows users to create, update, and delete issues, and it includes a status feature with various states like `OPEN`, `IN_PROGRESS`, and `CLOSED`.
+
+## Features
+
+- **Issue Management**: Create, view, update, and delete issues.
+- **User Authentication**: Users can sign in and interact with the issues.
+- **Status Tracking**: Issues are tracked with various statuses such as `OPEN`, `IN_PROGRESS`, and `CLOSED`.
+- **Data Visualization**: A chart to visualize the number of issues in each status (open, in-progress, and closed).
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v18.x or later)
+- npm, yarn, or pnpm (package managers)
+- A Prisma-compatible database (e.g., PostgreSQL, MySQL)
+
+### 1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/YeabTesfaye/Issue-Tracker
+
+cd Issue-Trakcer
+
+npm install
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Set up the environment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+DATABASE_URL=<your-sql-database-url>
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-next-auth-secret"
+GOOGLE_CLIENT_ID="your-google-client-id"
+GOOGLE_CLIENT_SECRET="your-google-client-secret"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Run Prisma migrations
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npx prisma migrate dev
+```
